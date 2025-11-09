@@ -1,3 +1,4 @@
+// Subscrbe YouTube Tamzidan Mahdiyin
 
 function hamburg(){
     const navbar = document.querySelector(".dropdown")
@@ -12,7 +13,7 @@ function cancel(){
 
 const texts = [
     "DEVELOPER",
-    "PROGRAMMER",
+    "YOUTUBER",
     "DESIGNER"
 ]
 
@@ -47,3 +48,5 @@ function eraseText() {
 }
 
 window.onload = typeWriter;
+
+// Subscrbe YouTube Tamzidan Mahdiyin
