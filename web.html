@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%);
+            background-size: cover;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .bg-animation span {
+            position: absolute;
+            display: block;
+            width: 20px;
+            height: 20px;
+            background: rgba(187, 0, 255, 0.1);
+            animation: animate 10s linear infinite;
+            bottom: -150px;
+        }
+
+        .bg-animation span:nth-child(1) {
+            left: 25%;
+            width: 80px;
+            height: 80px;
+            animation-delay: 0s;
+        }
+
+        .bg-animation span:nth-child(2) {
+            left: 10%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 2s;
+            animation-duration: 12s;
+        }
+
+        .bg-animation span:nth-child(3) {
+            left: 70%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 4s;
+        }
+
+        .bg-animation span:nth-child(4) {
+            left: 40%;
+            width: 60px;
+            height: 60px;
+            animation-delay: 0s;
+            animation-duration: 18s;
+        }
+
+        .bg-animation span:nth-child(5) {
+            left: 65%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 0s;
+        }
+
+        .bg-animation span:nth-child(6) {
+            left: 75%;
+            width: 110px;
+            height: 110px;
+            animation-delay: 3s;
+        }
+
+        .bg-animation span:nth-child(7) {
+            left: 35%;
+            width: 150px;
+            height: 150px;
+            animation-delay: 7s;
+        }
+
+        .bg-animation span:nth-child(8) {
+            left: 50%;
+            width: 25px;
+            height: 25px;
+            animation-delay: 15s;
+            animation-duration: 45s;
+        }
+
+        .bg-animation span:nth-child(9) {
+            left: 20%;
+            width: 15px;
+            height: 15px;
+            animation-delay: 2s;
+            animation-duration: 35s;
+        }
+
+        .bg-animation span:nth-child(10) {
+            left: 85%;
+            width: 150px;
+            height: 150px;
+            animation-delay: 0s;
+            animation-duration: 11s;
+        }
+
+        @keyframes animate {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+                border-radius: 0;
+            }
+            100% {
+                transform: translateY(-1000px) rotate(720deg);
+                opacity: 0;
+                border-radius: 50%;
+            }
+        }
+
+        nav {
+            width: 100%;
+            height: 10vh;
+            position: relative;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: rgb(187, 0, 255);
+            text-shadow: 0 0 10px rgb(187, 0, 255);
+        }
+
+        .hamburg, .cancel {
+            cursor: pointer;
+            position: absolute;
+            right: 15px;
+            top: 10px;
+            color: white;
+            display: none;
+            font-size: clamp(2.5rem, 0.5rem + 5vw, 3rem);
+        }
+
+        .nav-container .links {
+            display: flex;
+        }
+
+        .nav-container .links a {
+            font-size: 1.2rem;
+            color: white;
+            margin: 0 20px;
+            text-decoration: none;
+            font-weight: 550;
+            transition: 0.3s linear;
+        }
+
+        .nav-container .links a:hover {
+            color: rgb(187, 0, 255);
+            border-bottom: 2px solid rgb(187, 0, 255);
+        }
+
+        .nav-container .links .active {
+            color: rgb(187, 0, 255);
+            border-bottom: 2px solid rgb(187, 0, 255);
+        }
+
+        .dropdown {
+            z-index: 1000;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            transform: translateY(-500px);
+            width: 100%;
+            height: auto;
+            backdrop-filter: blur(4px) brightness(40%);
+            box-shadow: 0 0 20px black;
+            transition: 0.2s linear;
+        }
+
+        .dropdown .links a {
+            display: flex;
+            color: white;
+            text-decoration: none;
+            padding: 15px 0;
+            justify-content: center;
+            align-items: center;
+            transition: 0.2s linear;
+        }
+
+        .dropdown .links a:hover {
+            background-color: rgb(187, 0, 255);
+        }
+
+        /* Websites Section Styles */
+        .websites-container {
+            width: 100%;
+            min-height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .websites-content {
+            width: 90%;
+            max-width: 1400px;
+            background: rgba(15, 15, 15, 0.85);
+            backdrop-filter: blur(15px);
+            border-radius: 25px;
+            padding: 3rem;
+            color: white;
+            border: 1px solid rgba(187, 0, 255, 0.2);
+            box-shadow: 0 0 50px rgba(187, 0, 255, 0.1);
+        }
+
+        .websites-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .websites-header h1 {
+            font-size: 3rem;
+            color: rgb(187, 0, 255);
+            text-shadow: 0 0 20px rgb(187, 0, 255);
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, rgb(187, 0, 255), #a8ff78);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .websites-header p {
+            font-size: 1.2rem;
+            color: #ccc;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .websites-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .website-card {
+            background: linear-gradient(145deg, rgba(30, 30, 30, 0.9), rgba(20, 20, 20, 0.9));
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(187, 0, 255, 0.1);
+        }
+
+        .website-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(187, 0, 255, 0.1), transparent);
+            transition: left 0.6s;
+        }
+
+        .website-card:hover::before {
+            left: 100%;
+        }
+
+        .website-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(187, 0, 255, 0.3);
+            border-color: rgba(187, 0, 255, 0.4);
+        }
+
+        .website-icon {
+            font-size: 3rem;
+            color: rgb(187, 0, 255);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .website-card:hover .website-icon {
+            transform: scale(1.2) rotate(5deg);
+            text-shadow: 0 0 20px rgb(187, 0, 255);
+        }
+
+        .website-card h2 {
+            color: white;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            transition: color 0.3s ease;
+        }
+
+        .website-card:hover h2 {
+            color: rgb(187, 0, 255);
+        }
+
+        .website-card p {
+            color: #ccc;
+            text-align: center;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .website-link {
+            display: block;
+            text-align: center;
+            padding: 12px 30px;
+            background: linear-gradient(45deg, rgb(187, 0, 255), #45a049);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .website-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .website-link:hover::before {
+            left: 100%;
+        }
+
+        .website-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(187, 0, 255, 0.4);
+            background: linear-gradient(45deg, #45a049, rgb(187, 0, 255));
+        }
+
+        .website-features {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .website-features li {
+            color: #aaa;
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .website-features li::before {
+            content: '▸';
+            color: rgb(187, 0, 255);
+            position: absolute;
+            left: 0;
+        }
+
+        /* Status Indicator */
+        .status {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(187, 0, 255, 0.2);
+            color: rgb(187, 0, 255);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-left: 10px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.6; }
+            100% { opacity: 1; }
+        }
+
+        @media (max-width: 884px) {
+            .websites-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 2rem;
+            }
+            
+            nav .logo {
+                position: absolute;
+                top: 16px;
+                left: 15px;
+                font-size: 1.5rem;
+            }
+
+            .nav-container .links {
+                display: none;
+            }
+
+            .hamburg, .cancel {
+                display: block;
+            }
+
+            .websites-content {
+                padding: 2rem;
+            }
+
+            .websites-header h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 440px) {
+            .websites-container {
+                padding: 1rem;
+            }
+
+            .websites-content {
+                width: 95%;
+                padding: 1.5rem;
+            }
+
+            .websites-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .websites-header h1 {
+                font-size: 2rem;
+            }
+
+            .website-card {
+                padding: 2rem;
+            }
+
+            .website-icon {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+    <title>My Websites - Portfolio</title>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <nav>
+        <div class="nav-container">
+            <div class="logo" data-aos="zoom-in" data-aos-duration="1500">
+                VELLIXAO <span>OFFICIAL</span>
+            </div>
+            <div class="links">
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100"><a href="index.html">Home</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200"><a href="about.html">About</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300"><a href="skill.html">Skills</a></div>
+                <div class="link active" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400"><a href="websites.html">Web</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500"><a href="contact.html">Contact</a></div>
+            </div>
+        </div>
+        <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+        <div class="dropdown">
+            <div class="links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="skill.html">Skills</a>
+                <a href="web.html">Web</a>
+                <a href="contact.html">Contact</a>
+                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+            </div>
+        </div>
+    </nav>
+
+    <div class="websites-container">
+        <div class="websites-content">
+            <div class="websites-header" data-aos="fade-down" data-aos-duration="1500">
+                <h1>My Websites</h1>
+                <p>Kumpulan website dan project yang telah saya kembangkan dengan teknologi modern</p>
+            </div>
+            <div class="websites-grid">
+                <!-- Game Guardian & Roblox Tools -->
+                <div class="website-card" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
+                    <div class="website-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h2>Game Guardian & Roblox Tools <span class="status">Live</span></h2>
+                    <p>Platform tools dan utilities untuk game Guardian dan Roblox dengan berbagai fitur premium</p>
+                    <ul class="website-features">
+                        <li>Game hacking tools</li>
+                        <li>Script executor</li>
+                        <li>Premium features</li>
+                        <li>Regular updates</li>
+                    </ul>
+                    <a href="https://vellixaotools.byethost3.com" target="_blank" class="website-link">
+                        Visit Website <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+
+                <!-- Shop Digital -->
+                <div class="website-card" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200">
+                    <div class="website-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h2>Shop Digital <span class="status">Live</span></h2>
+                    <p>Toko digital modern menjual berbagai produk digital dengan sistem pembayaran otomatis</p>
+                    <ul class="website-features">
+                        <li>Digital products</li>
+                        <li>Auto payment system</li>
+                        <li>Instant delivery</li>
+                        <li>24/7 support</li>
+                    </ul>
+                    <a href="https://vellshop-digital.vercel.app" target="_blank" class="website-link">
+                        Visit Website <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+
+                <!-- Rekapan Coding -->
+                <div class="website-card" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300">
+                    <div class="website-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h2>Rekapan Coding <span class="status">Live</span></h2>
+                    <p>Blog dan dokumentasi pembelajaran programming dengan tutorial lengkap dan update</p>
+                    <ul class="website-features">
+                        <li>Programming tutorials</li>
+                        <li>Code snippets</li>
+                        <li>Project examples</li>
+                        <li>Community support</li>
+                    </ul>
+                    <a href="https://belajarcoding.vercel.app" target="_blank" class="website-link">
+                        Visit Website <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+
+                <!-- Script Roblox -->
+                <div class="website-card" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400">
+                    <div class="website-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h2>Script Roblox <span class="status">Live</span></h2>
+                    <p>Koleksi script Roblox terbaru dan terbaik untuk berbagai game dengan auto-update system</p>
+                    <ul class="website-features">
+                        <li>Latest scripts</li>
+                        <li>Auto updates</li>
+                        <li>Safe & tested</li>
+                        <li>User friendly</li>
+                    </ul>
+                    <a href="https://robloxscript.vercel.app" target="_blank" class="website-link">
+                        Visit Website <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+
+                <!-- Hosting File -->
+                <div class="website-card" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
+                    <div class="website-icon">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <h2>Hosting File <span class="status">Live</span></h2>
+                    <p>Layanan hosting file cepat dan aman dengan support berbagai format dan ukuran file</p>
+                    <ul class="website-features">
+                        <li>Fast upload</li>
+                        <li>Secure storage</li>
+                        <li>Multiple formats</li>
+                        <li>Direct links</li>
+                    </ul>
+                    <a href="https://vellhost-file.vercel.app" target="_blank" class="website-link">
+                        Visit Website <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            offset: 0,
+            once: true
+        });
+        
+        function hamburg() {
+            const navbar = document.querySelector(".dropdown")
+            navbar.style.transform = "translateY(0px)"
+        }
+        
+        function cancel() {
+            const navbar = document.querySelector(".dropdown")
+            navbar.style.transform = "translateY(-500px)"
+        }
+
+        // Additional smooth animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.website-card');
+            
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.zIndex = '10';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.zIndex = '1';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
