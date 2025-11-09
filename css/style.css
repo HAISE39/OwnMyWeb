@@ -39,8 +39,8 @@ nav {
 }
 
 .logo span {
-  color: rgb(58, 211, 3);
-  text-shadow: 0 0 10px rgb(58, 211, 3);
+  color: rgb(187, 0, 255);
+  text-shadow: 0 0 10px rgb(187, 0, 255);
 }
 
 .hamburg,
@@ -68,13 +68,13 @@ nav {
 }
 
 .nav-container .links a:hover {
-  color: rgb(58, 211, 3);
-  border-bottom: 2px solid rgb(58, 211, 3);
+  color: rgb(187, 0, 255);
+  border-bottom: 2px solid rgb(187, 0, 255);
 }
 
 .nav-container .links .active {
-  color: rgb(58, 211, 3);
-  border-bottom: 2px solid rgb(58, 211, 3);
+  color: rgb(187, 0, 255);
+  border-bottom: 2px solid rgb(187, 0, 255);
 }
 
 .dropdown {
@@ -100,7 +100,7 @@ nav {
 }
 
 .dropdown .links a:hover {
-  background-color: rgb(58, 211, 3);
+  background-color: rgb(187, 0, 255);
 }
 
 section {
@@ -130,8 +130,8 @@ section {
 
 .content h1 span {
   font-weight: 700;
-  text-shadow: 0 0 10px rgb(58, 211, 3);
-  color: rgb(58, 211, 3);
+  text-shadow: 0 0 10px rgb(187, 0, 255);
+  color: rgb(187, 0, 255);
 }
 
 .content .typewriter {
@@ -140,8 +140,8 @@ section {
 }
 
 .typewriter span {
-  color: rgb(58, 211, 3);
-  text-shadow: 0 0 10px rgb(58, 211, 3);
+  color: rgb(187, 0, 255);
+  text-shadow: 0 0 10px rgb(187, 0, 255);
 }
 
 .content p {
@@ -156,9 +156,9 @@ section {
   width: 3rem;
   height: 3rem;
   background-color: transparent;
-  border: 0.2rem solid rgb(58, 211, 3);
+  border: 0.2rem solid rgb(187, 0, 255);
   border-radius: 50%;
-  color: rgb(58, 211, 3);
+  color: rgb(187, 0, 255);
   margin: 0 15px;
   font-size: 1.5rem;
   transition: 0.2s linear;
@@ -166,10 +166,10 @@ section {
 
 .social-links i:hover {
   scale: 1.3;
-  filter: drop-shadow(0 0 10px rgb(58, 211, 3));
+  filter: drop-shadow(0 0 10px rgb(187, 0, 255));
   color: black;
-  background-color: rgb(58, 211, 3);
-  -webkit-filter: drop-shadow(0 0 10px rgb(58, 211, 3));
+  background-color: rgb(187, 0, 255);
+  -webkit-filter: drop-shadow(0 0 10px rgb(187, 0, 255));
 }
 
 .content button {
@@ -188,11 +188,11 @@ section {
 
 .content button:hover {
   scale: 1.1;
-  color: rgb(58, 211, 3);
-  border: 2px solid rgb(58, 211, 3);
+  color: rgb(187, 0, 255);
+  border: 2px solid rgb(187, 0, 255);
   background-color: transparent;
   font-weight: 700;
-  box-shadow: 0 0 40px 5px rgb(58, 211, 3);
+  box-shadow: 0 0 40px 5px rgb(187, 0, 255);
 }
 
 .main-container .image {
@@ -200,7 +200,7 @@ section {
   height: 50vh;
   border-radius: 100%;
   overflow: hidden;
-  box-shadow: 0 0 50px rgb(58, 211, 3);
+  box-shadow: 0 0 50px rgb(187, 0, 255);
 }
 
 .main-container .image img {
@@ -277,3 +277,4 @@ section {
     margin-top: 15px;
   }
 }
+/* Subscrbe YouTube Tamzidan Mahdiyin */
