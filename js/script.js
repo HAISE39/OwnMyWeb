@@ -1,55 +1,67 @@
-// Premium Smooth Mobile Navigation Menu Toggle
+// ============================================================
+// VELLIXAO OFFICIAL — Minimal interactions
+// ============================================================
 
+// Mobile nav
 function hamburg() {
-    const navbar = document.querySelector(".dropdown");
-    navbar.classList.add("active");
+    document.querySelector(".dropdown").classList.add("active");
 }
 
 function cancel() {
-    const navbar = document.querySelector(".dropdown");
-    navbar.classList.remove("active");
+    document.querySelector(".dropdown").classList.remove("active");
 }
 
-// Buttery Smooth Typewriter Animation Effect
-
-const texts = [
-    "DEVELOPER",
-    "PROGRAMMER",
-    "DESIGNER",
-    "DIGITAL CREATOR"
-];
-
+// Typewriter
+const texts = ["DEVELOPER", "PROGRAMMER", "DESIGNER", "DIGITAL CREATOR"];
 let speed = 80;
-const textElements = document.querySelector(".typewriter-text");
+const tw = document.querySelector(".tw");
 let textIndex = 0;
-let characterIndex = 0;
+let charIndex = 0;
 
 function typeWriter() {
-    if (!textElements) return; // Prevent errors on non-landing pages
-
-    if (characterIndex < texts[textIndex].length) {
-        textElements.innerHTML += texts[textIndex].charAt(characterIndex);
-        characterIndex++;
+    if (!tw) return;
+    if (charIndex < texts[textIndex].length) {
+        tw.innerHTML += texts[textIndex].charAt(charIndex);
+        charIndex++;
         setTimeout(typeWriter, speed);
     } else {
-        setTimeout(eraseText, 1800); // Wait longer before erasing to look premium
+        setTimeout(eraseText, 1800);
     }
 }
 
 function eraseText() {
-    if (!textElements) return;
-
-    if (textElements.innerHTML.length > 0) {
-        textElements.innerHTML = textElements.innerHTML.slice(0, -1);
+    if (!tw) return;
+    if (tw.innerHTML.length > 0) {
+        tw.innerHTML = tw.innerHTML.slice(0, -1);
         setTimeout(eraseText, 40);
     } else {
         textIndex = (textIndex + 1) % texts.length;
-        characterIndex = 0;
+        charIndex = 0;
         setTimeout(typeWriter, 500);
     }
 }
 
-// Ensure the typewriter only loads once window is ready
-window.addEventListener("DOMContentLoaded", () => {
-    typeWriter();
-});
+window.addEventListener("DOMContentLoaded", typeWriter);
+
+// Subtle reveal on scroll
+(function () {
+    const els = document.querySelectorAll(".reveal");
+    if (!("IntersectionObserver" in window)) {
+        els.forEach((el) => el.classList.add("in"));
+        return;
+    }
+    const io = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const delay = entry.target.dataset.delay;
+                    if (delay) entry.target.style.transitionDelay = delay + "ms";
+                    entry.target.classList.add("in");
+                    io.unobserve(entry.target);
+                }
+            });
+        },
+        { threshold: 0.1 }
+    );
+    els.forEach((el) => io.observe(el));
+})();

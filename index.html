@@ -1,104 +1,301 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VELLIXAO OFFICIAL | Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="VELLIXAO OFFICIAL — premium web developer & digital craftsman. Websites, automation systems, and fluid user experiences.">
+  <meta name="theme-color" content="#8c03fc">
+  <link rel="shortcut icon" href="img/vellix.jpg" type="image/x-icon" />
+  <!-- Font Awesome -->
+  <link type="text/css" rel="stylesheet" href="assets/css/all.css?v=6" media="print" onload="this.media='all'" />
+  <!-- Font CSS -->
+  <link type="text/css" rel="stylesheet" href="assets/fonts/font.css" />
+  <!-- Bootstrap CSS -->
+  <link type="text/css" rel="stylesheet" href="assets/css/bootstrap.min.css" media="print" onload="this.media='all'" />
+  <!-- Fancybox CSS -->
+  <link type="text/css" rel="stylesheet" href="assets/css/fancybox.css" media="print" onload="this.media='all'" />
+  <!-- Animate CSS -->
+  <link type="text/css" rel="stylesheet" href="assets/css/animate.min.css" media="print" onload="this.media='all'" />
+  <!-- Styles CSS -->
+  <link type="text/css" rel="stylesheet" href="assets/css/styles.css?v=6" />
+  <!-- Responsive CSS -->
+  <link type="text/css" rel="stylesheet" href="assets/css/responsive.css" media="print" onload="this.media='all'" />
+  <!-- VELLIXAO overrides -->
+  <link type="text/css" rel="stylesheet" href="assets/css/vellix.css?v=6" />
 
-    <!-- Import Font Awesome & AOS Libraries -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="css/style.css">
-    <title>VELLIXAO OFFICIAL - Portfolio</title>
+  <!-- Bootstrap Js -->
+  <script src="assets/js/bootstrap.bundle.min.js" async></script>
+  <!-- FancyBox Js -->
+  <script src="assets/js/fancybox.umd.js" defer></script>
+  <!-- Mixitup Js -->
+  <script src="assets/js/mixitup.min.js" defer></script>
+  <!-- Wow Js -->
+  <script src="assets/js/wow.min.js" async></script>
+  <!-- Utils JS -->
+  <script src="assets/js/utils.js" defer></script>
+  <!-- Preloader JS -->
+  <script src="assets/js/preloader.js" defer></script>
+  <!-- Custom Js -->
+  <script src="assets/js/custom.js?v=7" defer></script>
 </head>
 
-<body>
+<body class="gaspar" data-magic-cursor="show">
 
-    <!-- Navigation Bar -->
-    <nav>
-        <div class="nav-container">
-            <div class="logo" data-aos="zoom-in" data-aos-duration="1500" onclick="window.location.href='index.html'">
-                VELLIXAO <span>OFFICIAL</span>
+  <!-- Pre-Loader Start-->
+  <div id="preloader">
+    <div class="loader_line"></div>
+  </div>
+  <!-- Pre-Loader end -->
+
+  <!-- Header-section Start-->
+  <div class="header-holder text-center">
+    <div class="navigation">
+      <ul class="nav">
+        <li class="list active">
+          <a href="index.html" class="active">
+            <span class="icon"><i class="fas fa-home"></i></span>
+            <div class="social__tooltip social__tooltip-bottom">Home</div>
+          </a>
+        </li>
+        <li class="list">
+          <a href="about.html">
+            <span class="icon"><i class="fas fa-info"></i></span>
+            <div class="social__tooltip social__tooltip-bottom">About</div>
+          </a>
+        </li>
+        <li class="list">
+          <a href="skill.html">
+            <span class="icon"><i class="fas fa-cogs"></i></span>
+            <div class="social__tooltip social__tooltip-bottom">Skills</div>
+          </a>
+        </li>
+        <li class="list">
+          <a href="web.html">
+            <span class="icon"><i class="fas fa-folder-open"></i></span>
+            <div class="social__tooltip social__tooltip-bottom">Projects</div>
+          </a>
+        </li>
+        <li class="list">
+          <a href="service.html">
+            <span class="icon"><i class="fas fa-briefcase"></i></span>
+            <div class="social__tooltip social__tooltip-bottom">Services</div>
+          </a>
+        </li>
+        <li class="list">
+          <a href="contact.html">
+            <span class="icon"><i class="fas fa-address-card"></i></span>
+            <div class="social__tooltip social__tooltip-bottom">Contact</div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- Header-section End-->
+
+  <!-- Body Part Start -->
+  <div class="gaspar">
+    <!-- Index-page Start -->
+    <section id="home" class="section active">
+      <div class="homecolor-box"></div>
+      <div class="common_bg">
+        <div class="container m-auto">
+          <div class="row align-items-center home-hero-row">
+            <!-- Profile-Pic -->
+            <div class="col-xl-5 col-lg-6 col-md-6 col-12">
+              <div class="home-profile animate__animated animate__fadeInLeft animate__delay-1s">
+                <img src="img/vellix.jpg" alt="home-profile">
+              </div>
             </div>
+            <!-- Profile-Pic End-->
 
-            <div class="links">
-                <div class="link active" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100"><a href="index.html">Home</a></div>
-                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200"><a href="about.html">About</a></div>
-                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300"><a href="skill.html">Skills</a></div>
-                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400"><a href="web.html">Web</a></div>
-                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500"><a href="service.html">Service</a></div>
-                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="600"><a href="contact.html">Contact</a></div>
-            </div>
-        </div>
-
-        <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
-
-        <div class="dropdown">
-            <div class="links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="skill.html">Skills</a>
-                <a href="web.html">Web</a>
-                <a href="service.html">Service</a>
-                <a href="contact.html">Contact</a>
-                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Main Content Section -->
-    <section>
-        <div class="main-container">
-            <div class="content">
-                <h1 data-aos="fade-left" data-aos-duration="1500" data-aos-delay="700">Hey I'm <span>VELLIXAO</span></h1>
-
-                <div data-aos="fade-right" data-aos-duration="1500" data-aos-delay="900" class="typewriter">
-                    I'm a <span class="typewriter-text"></span><label style="color: var(--primary);">|</label>
+            <!-- Profile-Information -->
+            <div class="col-xl-7 col-lg-6 col-md-6 col-12">
+              <div class="home-content">
+                <p class="common-desctiption animate__animated animate__fadeInDown animate__delay-1s">Welcome to my portfolio</p>
+                <h1 class="common-title animate__animated animate__fadeInDown animate__delay-1s">I'm <span>VELLIXAO</span></h1>
+                <div class="animated-bar animate__animated animate__fadeInDown animate__delay-2s"></div>
+                <div class="animated-text animate__animated animate__fadeInDown animate__delay-2s">
+                  <h3>Web Developer</h3>
+                  <h3>Automation</h3>
+                  <h3>UI/UX</h3>
+                  <h3>Digital Craftsman</h3>
+                  <h3>AND MORE</h3>
                 </div>
-
-                <p data-aos="flip-down" data-aos-duration="1500" data-aos-delay="1100">
-                    Welcome to my premium space. I build outstanding modern digital products, responsive web platforms, and automated system tools. Crafting premium solutions with precise code and creative UI/UX layouts.
+                <!-- Social media icons-->
+                <div class="fixed-block animate__animated animate__jackInTheBox animate__delay-2-5s">
+                  <ul class="list-unstyled social-icons">
+                    <li><a href="https://wa.me/6285706400133" title="WhatsApp"><i class="fab fa-whatsapp-square"></i></a></li>
+                    <li><a href="https://instagram.com/vellix_cc" title="Instagram"><i class="fab fa-instagram-square"></i></a></li>
+                    <li><a href="https://t.me/VELLIX_AO" title="Telegram"><i class="fab fa-telegram"></i></a></li>
+                    <li><a href="https://facebook.com/kurol_watu" title="Facebook"><i class="fab fa-facebook-square"></i></a></li>
+                  </ul>
+                </div>
+                <p class="lorem-text animate__animated animate__zoomIn animate__delay-2-5s">
+                  I build <b>premium high-performance websites</b> and <b>custom automation systems</b>.
+                  Clean code, smooth experience, built to last — from concept to launch.
                 </p>
-
-                <!-- Upgraded WhatsApp, Instagram, Telegram, Facebook Social Links -->
-                <div class="social-links">
-                    <a href="https://wa.me/6285706400133" target="_blank" class="whatsapp" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1300" title="WhatsApp">
-                        <i class="fa-brands fa-whatsapp"></i>
-                    </a>
-                    <a href="https://instagram.com/vellix_cc" target="_blank" class="instagram" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1400" title="Instagram">
-                        <i class="fa-brands fa-instagram"></i>
-                    </a>
-                    <a href="https://t.me/VELLIX_AO" target="_blank" class="telegram" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1500" title="Telegram">
-                        <i class="fa-brands fa-telegram"></i>
-                    </a>
-                    <a href="https://facebook.com/kurol_watu" target="_blank" class="facebook" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1600" title="Facebook">
-                        <i class="fa-brands fa-facebook"></i>
-                    </a>
+                <div class="home-btn">
+                  <a href="about.html" class="clickbtn animate__animated animate__fadeInTopRight animate__delay-3s">About Me</a>
+                  <a href="web.html" class="clickbtn animate__animated animate__fadeInTopLeft animate__delay-3s">My Projects</a>
                 </div>
-
-                <div class="btn" data-aos="zoom-out" data-aos-duration="1500" data-aos-delay="1800">
-                    <button onclick="window.location.href='contact.html'">Let's Connect</button>
-                </div>
+              </div>
             </div>
+            <!-- Profile-Information End -->
+          </div>
 
-            <!-- Upgraded Pulsing Neon Profile Image -->
-            <div class="image" data-aos="zoom-in" data-aos-duration="2500">
-                <div class="image-frame">
-                    <div class="image-inner">
-                        <img src="img/vellix.jpg" alt="Vellixao Profile">
+          <!-- Fun Fact Section -->
+          <div class="funfacts-section">
+            <div class="row">
+              <div class="col-lg-4 col-md-6">
+                <div class="funfacts-box">
+                  <h3 class="counter" data-to="50" data-time="1200">0</h3>
+                  <p class="fun-text">projects completed</p>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <div class="funfacts-box">
+                  <h3 class="counter" data-to="3" data-time="600">0</h3>
+                  <p class="fun-text">years experience</p>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <div class="funfacts-box">
+                  <h3 class="counter" data-to="20" data-time="1200">0</h3>
+                  <p class="fun-text">happy clients</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Fun Fact Section End -->
+
+          <!-- Services preview -->
+          <div class="services-section">
+            <div class="row">
+              <div class="col-12">
+                <div class="section-title">
+                  <p class="common-desctiption">What I Do</p>
+                  <h1 class="common-title">Services for <span>your growth</span></h1>
+                  <div class="animated-bar"></div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-4 col-md-6 col-12">
+                <div class="service-item">
+                  <i class="fas fa-code"></i>
+                  <h3 class="service-title">Web Development</h3>
+                  <p>Fast, responsive, modern websites built with clean code and optimized for speed and SEO.</p>
+                  <a href="service.html" class="clickbtn">Learn More</a>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 col-12">
+                <div class="service-item">
+                  <i class="fas fa-pen-nib"></i>
+                  <h3 class="service-title">UI/UX Design</h3>
+                  <p>User-centered designs in Figma — wireframing, fluid components, and cohesive branding.</p>
+                  <a href="service.html" class="clickbtn">Learn More</a>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 col-12">
+                <div class="service-item">
+                  <i class="fas fa-cogs"></i>
+                  <h3 class="service-title">Automation Systems</h3>
+                  <p>Custom panels, automated payments, and script integrations that run reliably 24/7.</p>
+                  <a href="service.html" class="clickbtn">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Works preview -->
+          <div class="services-section">
+            <div class="row">
+              <div class="col-12">
+                <div class="section-title">
+                  <p class="common-desctiption">Selected Works</p>
+                  <h1 class="common-title">Websites I've <span>shipped</span></h1>
+                  <div class="animated-bar"></div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-4 col-md-6 col-12">
+                <div class="work-item">
+                  <div class="work-top">
+                    <h3>Shop Digital</h3>
+                    <span class="badge live">Live</span>
+                  </div>
+                  <div class="work-body">
+                    <p>Modern digital store with automated payment and instant delivery.</p>
+                    <div class="work-tags">
+                      <span>Auto Payment</span>
+                      <span>Instant Delivery</span>
                     </div>
+                    <a href="https://vellshop-digital.vercel.app" target="_blank" class="card-link">Visit Website <i class="fas fa-external-link-alt"></i></a>
+                  </div>
                 </div>
+              </div>
+              <div class="col-lg-4 col-md-6 col-12">
+                <div class="work-item">
+                  <div class="work-top">
+                    <h3>GG &amp; Roblox Tools</h3>
+                    <span class="badge live">Live</span>
+                  </div>
+                  <div class="work-body">
+                    <p>Premium tools platform for Game Guardian &amp; Roblox with regular updates.</p>
+                    <div class="work-tags">
+                      <span>Game Tools</span>
+                      <span>Premium</span>
+                    </div>
+                    <a href="https://vellixaotools.byethost3.com" target="_blank" class="card-link">Visit Website <i class="fas fa-external-link-alt"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 col-12">
+                <div class="work-item">
+                  <div class="work-top">
+                    <h3>FREE GG Panel</h3>
+                    <span class="badge live">Live</span>
+                  </div>
+                  <div class="work-body">
+                    <p>Free Game Guardian panel with premium features unlocked, no subscription.</p>
+                    <div class="work-tags">
+                      <span>100% Free</span>
+                      <span>Unlocked</span>
+                    </div>
+                    <a href="https://vellixaoggpanelfree.vercel.app" target="_blank" class="card-link">Visit Website <i class="fas fa-external-link-alt"></i></a>
+                  </div>
+                </div>
+              </div>
             </div>
-        </div>
-    </section>
+          </div>
 
-    <!-- Script Imports -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init({ offset: 0, once: true });
-    </script>
-    <script src="./js/script.js"></script>
+          <!-- CTA -->
+          <div class="cta-band">
+            <h2>Have a project in <span>mind?</span></h2>
+            <p>Let's turn your idea into a premium digital product. Fast response, precise execution.</p>
+            <a href="contact.html" class="clickbtn">Start a Project</a>
+            <a href="web.html" class="clickbtn">View All Works</a>
+          </div>
+
+          <!-- Footer -->
+          <div class="vellix-footer">
+            <h5>Copyright &copy; <span id="current-year"></span> VELLIXAO&nbsp;<i class="fas fa-heart"></i>&nbsp;All rights reserved.</h5>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Index-page End -->
+  </div>
+  <!-- Body Part End -->
+
+  <!-- Mouse-Cursor -->
+  <div class="mouse-cursor cursor-outer"></div>
+  <div class="mouse-cursor cursor-inner"></div>
+  <!-- Mouse-Cursor End-->
+
 </body>
 
 </html>
-<!-- Subscribe YouTube VELLIXAO OFFICIAL -->

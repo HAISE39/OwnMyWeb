@@ -1,368 +1,205 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="css/style.css">
-    <style>
-        .websites-container {
-            width: 100%;
-            min-height: 88vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 40px 20px;
-        }
+  <title>Projects - VELLIXAO OFFICIAL</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="VELLIXAO projects — websites, tools, panels, and automation systems.">
+  <meta name="theme-color" content="#8c03fc">
+  <link rel="shortcut icon" href="img/vellix.jpg" type="image/x-icon" />
+  <!-- Font Awesome -->
+  <link type="text/css" rel="stylesheet" href="assets/css/all.css?v=6" media="print" onload="this.media='all'" />
+  <!-- Font CSS -->
+  <link type="text/css" rel="stylesheet" href="assets/fonts/font.css" />
+  <!-- Bootstrap CSS -->
+  <link type="text/css" rel="stylesheet" href="assets/css/bootstrap.min.css" media="print" onload="this.media='all'" />
+  <!-- Fancybox CSS -->
+  <link type="text/css" rel="stylesheet" href="assets/css/fancybox.css" media="print" onload="this.media='all'" />
+  <!-- Animate CSS -->
+  <link type="text/css" rel="stylesheet" href="assets/css/animate.min.css" media="print" onload="this.media='all'" />
+  <!-- Styles CSS -->
+  <link type="text/css" rel="stylesheet" href="assets/css/styles.css?v=6" />
+  <!-- Responsive CSS -->
+  <link type="text/css" rel="stylesheet" href="assets/css/responsive.css" media="print" onload="this.media='all'" />
+  <!-- VELLIXAO overrides -->
+  <link type="text/css" rel="stylesheet" href="assets/css/vellix.css?v=6" />
 
-        .websites-content {
-            width: 100%;
-            max-width: 1200px;
-            padding: 40px;
-            border-radius: 24px;
-        }
-
-        .websites-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .websites-header h1 {
-            font-size: 3rem;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 800;
-        }
-
-        .websites-header p {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            margin-top: 10px;
-        }
-
-        .websites-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-
-        .website-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid var(--card-border);
-            border-radius: 20px;
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            position: relative;
-            transition: var(--transition-smooth);
-            overflow: hidden;
-        }
-
-        .website-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            opacity: 0;
-            transition: var(--transition-smooth);
-        }
-
-        .website-card:hover::before {
-            opacity: 1;
-        }
-
-        .website-card:hover {
-            background: rgba(187, 0, 255, 0.04);
-            border-color: rgba(187, 0, 255, 0.3);
-            transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(187, 0, 255, 0.15);
-        }
-
-        .website-icon {
-            font-size: 2.8rem;
-            color: var(--secondary);
-            margin-bottom: 20px;
-            filter: drop-shadow(0 0 10px var(--secondary-glow));
-        }
-
-        .website-card h2 {
-            font-size: 1.3rem;
-            color: #ffffff;
-            font-weight: 700;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .website-card p {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .website-features {
-            list-style: none;
-            margin-bottom: 25px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .website-features li {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .website-features li::before {
-            content: '✓';
-            color: var(--secondary);
-            font-weight: bold;
-        }
-
-        .status {
-            font-size: 0.75rem;
-            padding: 2px 10px;
-            border-radius: 20px;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-
-        .status.live {
-            background: rgba(37, 211, 102, 0.15);
-            color: #25d366;
-            border: 1px solid rgba(37, 211, 102, 0.3);
-        }
-
-        .status.new {
-            background: rgba(187, 0, 255, 0.15);
-            color: var(--primary);
-            border: 1px solid rgba(187, 0, 255, 0.3);
-        }
-
-        .status.maintenance {
-            background: rgba(255, 170, 0, 0.15);
-            color: #ffaa00;
-            border: 1px solid rgba(255, 170, 0, 0.3);
-        }
-
-        .website-link {
-            align-self: flex-start;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--secondary);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: var(--transition-smooth);
-            border-bottom: 1px solid transparent;
-        }
-
-        .website-link:hover {
-            color: #ffffff;
-            border-bottom-color: #ffffff;
-            transform: translateX(5px);
-        }
-
-        @media (max-width: 992px) {
-            .websites-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 650px) {
-            .websites-grid {
-                grid-template-columns: 1fr;
-            }
-            .websites-header h1 {
-                font-size: 2.2rem;
-            }
-            .websites-content {
-                padding: 20px;
-            }
-        }
-    </style>
-    <title>Web Projects - VELLIXAO OFFICIAL</title>
+  <!-- Bootstrap Js -->
+  <script src="assets/js/bootstrap.bundle.min.js" async></script>
+  <!-- FancyBox Js -->
+  <script src="assets/js/fancybox.umd.js" defer></script>
+  <!-- Mixitup Js -->
+  <script src="assets/js/mixitup.min.js" defer></script>
+  <!-- Wow Js -->
+  <script src="assets/js/wow.min.js" async></script>
+  <!-- Utils JS -->
+  <script src="assets/js/utils.js" defer></script>
+  <!-- Preloader JS -->
+  <script src="assets/js/preloader.js" defer></script>
+  <!-- Custom Js -->
+  <script src="assets/js/custom.js?v=7" defer></script>
 </head>
-<body>
-    <!-- Navigation Bar -->
-    <nav>
-        <div class="nav-container">
-            <div class="logo" data-aos="zoom-in" data-aos-duration="1500" onclick="window.location.href='index.html'">
-                VELLIXAO <span>OFFICIAL</span>
-            </div>
-            <div class="links">
-                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100"><a href="index.html">Home</a></div>
-                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200"><a href="about.html">About</a></div>
-                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300"><a href="skill.html">Skills</a></div>
-                <div class="link active" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400"><a href="web.html">Web</a></div>
-                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500"><a href="service.html">Service</a></div>
-                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="600"><a href="contact.html">Contact</a></div>
-            </div>
-        </div>
-        <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
-        <div class="dropdown">
-            <div class="links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="skill.html">Skills</a>
-                <a href="web.html">Web</a>
-                <a href="service.html">Service</a>
-                <a href="contact.html">Contact</a>
-                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Web Projects Space -->
-    <div class="websites-container">
-        <div class="websites-content glass-card" data-aos="fade-up" data-aos-duration="1500">
-            <div class="websites-header" data-aos="fade-down" data-aos-duration="1500">
-                <h1>Websites</h1>
-                <p>Kumpulan website dan project premium yang telah saya kembangkan dengan teknologi modern</p>
-            </div>
-            <div class="websites-grid">
-                <!-- Game Guardian & Roblox Tools -->
-                <div class="website-card" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
-                    <div>
-                        <div class="website-icon">
-                            <i class="fas fa-gamepad"></i>
-                        </div>
-                        <h2>GG & Roblox Tools <span class="status live">Live</span></h2>
-                        <p>Platform tools dan utilities untuk Game Guardian dan Roblox dengan berbagai fitur premium.</p>
-                        <ul class="website-features">
-                            <li>Game hacking tools</li>
-                            <li>Script executor</li>
-                            <li>Premium features</li>
-                            <li>Regular updates</li>
-                        </ul>
-                    </div>
-                    <a href="https://vellixaotools.byethost3.com" target="_blank" class="website-link">
-                        Visit Website <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
+<body class="gaspar" data-magic-cursor="show">
 
-                <!-- Shop Digital -->
-                <div class="website-card" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200">
-                    <div>
-                        <div class="website-icon">
-                            <i class="fas fa-shopping-cart"></i>
-                        </div>
-                        <h2>Shop Digital <span class="status live">Live</span></h2>
-                        <p>Toko digital modern menjual berbagai produk digital dengan sistem pembayaran otomatis.</p>
-                        <ul class="website-features">
-                            <li>Digital products</li>
-                            <li>Auto payment system</li>
-                            <li>Instant delivery</li>
-                            <li>24/7 support</li>
-                        </ul>
-                    </div>
-                    <a href="https://vellshop-digital.vercel.app" target="_blank" class="website-link">
-                        Visit Website <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
+  <!-- Pre-Loader Start-->
+  <div id="preloader">
+    <div class="loader_line"></div>
+  </div>
+  <!-- Pre-Loader end -->
 
-                <!-- Rekapan Coding -->
-                <div class="website-card" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300">
-                    <div>
-                        <div class="website-icon">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <h2>Rekapan Coding <span class="status live">Live</span></h2>
-                        <p>Blog dan dokumentasi pembelajaran programming dengan tutorial lengkap dan update.</p>
-                        <ul class="website-features">
-                            <li>Programming tutorials</li>
-                            <li>Code snippets</li>
-                            <li>Project examples</li>
-                            <li>Community support</li>
-                        </ul>
-                    </div>
-                    <a href="https://basiccode.vercel.app/" target="_blank" class="website-link">
-                        Visit Website <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-
-                <!-- Script Roblox -->
-                <div class="website-card" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400">
-                    <div>
-                        <div class="website-icon">
-                            <i class="fas fa-robot"></i>
-                        </div>
-                        <h2>Script Roblox <span class="status live">Live</span></h2>
-                        <p>Koleksi script Roblox terbaru dan terbaik untuk berbagai game dengan auto-update system.</p>
-                        <ul class="website-features">
-                            <li>Latest scripts</li>
-                            <li>Auto updates</li>
-                            <li>Safe & tested</li>
-                            <li>User friendly</li>
-                        </ul>
-                    </div>
-                    <a href="https://scriptblox.com" target="_blank" class="website-link">
-                        Visit Website <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-
-                <!-- FREE GG PANEL -->
-                <div class="website-card" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
-                    <div>
-                        <div class="website-icon">
-                            <i class="fas fa-crown"></i>
-                        </div>
-                        <h2>FREE GG PANEL <span class="status new">NEW</span></h2>
-                        <p>Panel Game Guardian gratis dengan semua fitur premium tanpa biaya! Solusi lengkap untuk game mobile.</p>
-                        <ul class="website-features">
-                            <li>100% Free access</li>
-                            <li>Premium features unlocked</li>
-                            <li>No subscription required</li>
-                            <li>Multi-game support</li>
-                        </ul>
-                    </div>
-                    <a href="https://vellixaoggpanelfree.vercel.app" target="_blank" class="website-link">
-                        Visit Website <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-
-                <!-- Hosting File -->
-                <div class="website-card" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="600">
-                    <div>
-                        <div class="website-icon">
-                            <i class="fas fa-cloud-upload-alt"></i>
-                        </div>
-                        <h2>Hosting File <span class="status maintenance">Maintenance</span></h2>
-                        <p>Layanan hosting file cepat dan aman dengan support berbagai format dan ukuran file.</p>
-                        <ul class="website-features">
-                            <li>Fast upload</li>
-                            <li>Secure storage</li>
-                            <li>Multiple formats</li>
-                            <li>Direct links</li>
-                        </ul>
-                    </div>
-                    <a href="https://uploader-website.vercel.app/" target="_blank" class="website-link">
-                        Visit Website <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
+  <!-- Header-section Start-->
+  <div class="header-holder text-center">
+    <div class="navigation">
+      <ul class="nav">
+        <li class="list">
+          <a href="index.html">
+            <span class="icon"><i class="fas fa-home"></i></span>
+            <div class="social__tooltip social__tooltip-bottom">Home</div>
+          </a>
+        </li>
+        <li class="list">
+          <a href="about.html">
+            <span class="icon"><i class="fas fa-info"></i></span>
+            <div class="social__tooltip social__tooltip-bottom">About</div>
+          </a>
+        </li>
+        <li class="list">
+          <a href="skill.html">
+            <span class="icon"><i class="fas fa-cogs"></i></span>
+            <div class="social__tooltip social__tooltip-bottom">Skills</div>
+          </a>
+        </li>
+        <li class="list active">
+          <a href="web.html" class="active">
+            <span class="icon"><i class="fas fa-folder-open"></i></span>
+            <div class="social__tooltip social__tooltip-bottom">Projects</div>
+          </a>
+        </li>
+        <li class="list">
+          <a href="service.html">
+            <span class="icon"><i class="fas fa-briefcase"></i></span>
+            <div class="social__tooltip social__tooltip-bottom">Services</div>
+          </a>
+        </li>
+        <li class="list">
+          <a href="contact.html">
+            <span class="icon"><i class="fas fa-address-card"></i></span>
+            <div class="social__tooltip social__tooltip-bottom">Contact</div>
+          </a>
+        </li>
+      </ul>
     </div>
+  </div>
+  <!-- Header-section End-->
 
-    <!-- Script Imports -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init({ offset: 0, once: true });
-    </script>
-    <script src="./js/script.js"></script>
+  <!-- Body Part Start -->
+  <div class="gaspar">
+    <!-- Project Section Start -->
+    <section id="project" class="section active">
+      <div class="homecolor-box"></div>
+      <div class="common_bg">
+        <div class="container">
+          <div class="text-center">
+            <!-- Project-Title Start -->
+            <div class="row">
+              <div class="col-12">
+                <div class="section-title animate__animated animate__fadeInDown animate__delay-1s">
+                  <p class="common-desctiption">Showcasing some of my work</p>
+                  <h1 class="common-title">My <span>Projects</span></h1>
+                  <div class="animated-bar"></div>
+                </div>
+              </div>
+            </div>
+            <!-- Project-Title Start -->
+
+            <!-- Project nav-button start -->
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="portfolio-menu animate__animated animate__fadeInUp animate__delay-2s">
+                  <nav class="controls">
+                    <button type="button" class="control clickbtn mixitup-control-active" data-filter="all">All</button>
+                    <button type="button" class="control clickbtn" data-filter=".webdesign">WEBSITES</button>
+                    <button type="button" class="control clickbtn" data-filter=".tools">TOOLS &amp; PANELS</button>
+                  </nav>
+                </div>
+              </div>
+            </div>
+            <!-- Project nav-button End -->
+
+            <!-- Project Mix Content Start -->
+            <div class="row portfolio-list animate__zoomIn animate__animated animate__delay-3s">
+              <div class="container">
+                <ul class="row ps-0">
+
+                  <!-- Mix Content-Box -->
+                  <li class="mix webdesign col-xl-4 col-lg-4 col-md-6">
+                    <a title="click to zoom-in" href="assets/images/projects/shop-digital.svg" data-caption="Shop Digital" data-link="https://vellshop-digital.vercel.app">
+                      <img src="assets/images/projects/shop-digital.svg" alt="Shop Digital">
+                    </a>
+                  </li>
+
+                  <li class="mix webdesign col-xl-4 col-lg-4 col-md-6">
+                    <a title="click to zoom-in" href="assets/images/projects/gg-tools.svg" data-caption="GG &amp; Roblox Tools" data-link="https://vellixaotools.byethost3.com">
+                      <img src="assets/images/projects/gg-tools.svg" alt="GG &amp; Roblox Tools">
+                    </a>
+                  </li>
+
+                  <li class="mix webdesign col-xl-4 col-lg-4 col-md-6">
+                    <a title="click to zoom-in" href="assets/images/projects/rekapan-coding.svg" data-caption="Rekapan Coding" data-link="https://basiccode.vercel.app/">
+                      <img src="assets/images/projects/rekapan-coding.svg" alt="Rekapan Coding">
+                    </a>
+                  </li>
+
+                  <li class="mix tools col-xl-4 col-lg-4 col-md-6">
+                    <a title="click to zoom-in" href="assets/images/projects/script-roblox.svg" data-caption="Script Roblox" data-link="https://scriptblox.com">
+                      <img src="assets/images/projects/script-roblox.svg" alt="Script Roblox">
+                    </a>
+                  </li>
+
+                  <li class="mix tools col-xl-4 col-lg-4 col-md-6">
+                    <a title="click to zoom-in" href="assets/images/projects/free-gg-panel.svg" data-caption="FREE GG Panel" data-link="https://vellixaoggpanelfree.vercel.app">
+                      <img src="assets/images/projects/free-gg-panel.svg" alt="FREE GG Panel">
+                    </a>
+                  </li>
+
+                  <li class="mix tools col-xl-4 col-lg-4 col-md-6">
+                    <a title="click to zoom-in" href="assets/images/projects/hosting-file.svg" data-caption="Hosting File" data-link="https://uploader-website.vercel.app/">
+                      <img src="assets/images/projects/hosting-file.svg" alt="Hosting File">
+                    </a>
+                  </li>
+
+                </ul>
+              </div>
+            </div>
+            <!-- Portfolio Mix Content End -->
+          </div>
+
+          <!-- CTA -->
+          <div class="cta-band">
+            <h2>Want something <span>like this?</span></h2>
+            <p>Custom websites, panels, and automated systems built to your exact needs.</p>
+            <a href="contact.html" class="clickbtn">Start a Project</a>
+            <a href="service.html" class="clickbtn">View Services</a>
+          </div>
+
+          <!-- Footer -->
+          <div class="vellix-footer">
+            <h5>Copyright &copy; <span id="current-year"></span> VELLIXAO&nbsp;<i class="fas fa-heart"></i>&nbsp;All rights reserved.</h5>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Project Section End -->
+  </div>
+  <!-- Body Part End -->
+
+  <!-- Mouse-Cursor -->
+  <div class="mouse-cursor cursor-outer"></div>
+  <div class="mouse-cursor cursor-inner"></div>
+  <!-- Mouse-Cursor End-->
+
 </body>
+
 </html>
-<!-- Subscribe VELLIXAO OFFICIAL on YouTube -->

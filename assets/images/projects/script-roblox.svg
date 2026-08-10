@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#16161c"/>
+      <stop offset="55%" stop-color="#1c1028"/>
+      <stop offset="100%" stop-color="#0f0f14"/>
+    </linearGradient>
+    <linearGradient id="acc" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8c03fc"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <rect x="0" y="0" width="800" height="6" fill="url(#acc)"/>
+  <circle cx="640" cy="120" r="110" fill="rgba(140,3,252,0.12)"/>
+  <circle cx="640" cy="120" r="60" fill="rgba(140,3,252,0.10)"/>
+  <rect x="24" y="470" width="180" height="6" rx="3" fill="rgba(255,255,255,0.12)"/>
+  <g font-family="Lato, Arial, sans-serif">
+    <text x="40" y="90" font-size="17" fill="#a855f7" letter-spacing="3">VELLIXAO PROJECT</text>
+    <text x="40" y="140" font-size="44" font-weight="bold" fill="#ffffff">Script Roblox</text>
+    <text x="40" y="175" font-size="20" fill="#888888">scriptblox.com</text>
+  </g>
+  <g transform="translate(600,300)">
+    <circle cx="0" cy="0" r="86" fill="#232323" stroke="#8c03fc" stroke-width="2"/>
+    <rect x="-46" y="-30" width="92" height="60" rx="8" fill="none" stroke="#a855f7" stroke-width="4"/>
+    <rect x="-40" y="-24" width="34" height="10" rx="3" fill="#8c03fc"/>
+    <rect x="-40" y="-8" width="34" height="10" rx="3" fill="#8c03fc" opacity="0.6"/>
+    <rect x="6" y="-24" width="34" height="10" rx="3" fill="#8c03fc" opacity="0.6"/>
+    <rect x="6" y="-8" width="34" height="10" rx="3" fill="#8c03fc"/>
+    <line x1="-40" y1="12" x2="40" y2="12" stroke="#a855f7" stroke-width="3" stroke-linecap="round"/>
+    <text x="-18" y="48" font-size="16" fill="#ffffff" font-weight="bold">LUA</text>
+  </g>
+</svg>
